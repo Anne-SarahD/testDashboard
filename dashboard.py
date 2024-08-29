@@ -143,3 +143,48 @@ elif thema == "Trampolin":
 
 # Hauptinhalt je nach Auswahl anzeigen
 st.title(f"Ausgewähltes Thema: {thema}")
+
+# Initialisiere den Zustand für die gewählte Jahreszeit
+if 'season' not in st.session_state:
+    st.session_state.season = "Frühling"
+
+# Titel der App
+st.title("Jahreszeiten")
+
+# Sidebar mit der Navigation
+st.sidebar.title("Navigation")
+
+# Buttons für jede Jahreszeit in der Sidebar
+if st.sidebar.button("Frühling"):
+    st.session_state.season = "Frühling"
+elif st.sidebar.button("Sommer"):
+    st.session_state.season = "Sommer"
+elif st.sidebar.button("Herbst"):
+    st.session_state.season = "Herbst"
+elif st.sidebar.button("Winter"):
+    st.session_state.season = "Winter"
+
+# "Retour" oder "Zurücksetzen"-Button
+if st.sidebar.button("Zurücksetzen"):
+    st.session_state.season = "Frühling"  # Zurück zur Standardansicht
+
+# Zeige die gewählte Seite basierend auf der Jahreszeit an
+if st.session_state.season == "Frühling":
+    st.header("Frühling")
+    st.write("Willkommen im Frühling! Hier könnte eine Beschreibung des Frühlings stehen.")
+    st.write("Die Natur erwacht, die Blumen blühen, und das Wetter wird wärmer.")
+
+elif st.session_state.season == "Sommer":
+    st.header("Sommer")
+    st.write("Willkommen im Sommer! Hier könnte eine Beschreibung des Sommers stehen.")
+    st.write("Die Tage sind lang, das Wetter ist heiß, und es ist die perfekte Zeit für Urlaub.")
+
+elif st.session_state.season == "Herbst":
+    st.header("Herbst")
+    st.write("Willkommen im Herbst! Hier könnte eine Beschreibung des Herbstes stehen.")
+    st.write("Die Blätter färben sich bunt, die Erntezeit beginnt, und die Temperaturen kühlen ab.")
+
+elif st.session_state.season == "Winter":
+    st.header("Winter")
+    st.write("Willkommen im Winter! Hier könnte eine Beschreibung des Winters stehen.")
+    st.write("Es wird kalt, die Landschaft ist oft schneebedeckt, und die Tage sind kürzer.")
