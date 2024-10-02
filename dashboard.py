@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Titel der App
-st.title("Test")
+st.title("Anne-Sarah")
 
 # CSV-Datei importieren
 df = pd.read_csv('Testdatei.csv', sep=';')
